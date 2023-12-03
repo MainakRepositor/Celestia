@@ -34,19 +34,11 @@ with st.sidebar:
         st.title("Celestia")
         st.subheader("Accurate detection of star or galaxies from the cosmic microwave noise present in the Celestial images. This helps an user to easily detect the type of celestial body and identify it with spectroscopy.")
 
-             
-        
-def prediction_cls(prediction):
-    for key, clss in class_names.items():
-        if np.argmax(prediction)==clss:
-            
-            return key
-        
-       
+   
 
     
 
-st.set_option('deprecation.showfileUploaderEncoding', False)
+
 @st.cache(allow_output_mutation=True)
 def load_model():
     model=tf.keras.models.load_model('https://drive.google.com/file/d/1TiYir_UY15JEQIRleoR7dvKfIgXWtWQ0/view?usp=sharing')
